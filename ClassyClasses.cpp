@@ -294,21 +294,21 @@ protected:
 
 
 private:
-    std::vector<int> vec_;
+    std::vector<int> m_vec_;         // member variables' names start with an "m_"
 
-    std::string str_;
+    std::string m_str_;
 
-    T member_;                         // variables
+    T m_var;
 
-    inline static bool flag = true;
+    inline static bool s_flag = true;
 
-    static int s1_;                    // static variables
+    static int s_integer;                    // static variables' names start with an "s_"
 
-    static constinit int m1_;          
+    static constinit int s_int1;          
 
-    static constexpr int m2_;
+    static constexpr int s_int2;
     
-    static constexpr auto text_ = L"FatPound";
+    static constexpr auto s_text_ = L"FatPound";
 };
 
 module : private;
