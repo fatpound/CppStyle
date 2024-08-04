@@ -294,7 +294,13 @@ protected:
 
 
 private:
-    std::vector<int> m_vec_;         // member variables' names start with an "m_"
+    // static variables' names start with an "s_"
+    // member variables' names start with an "m_"
+    // pointers, references, and "handle"s are written in camelCase, not snake_case like other member variables.
+    ::Microsoft::WRL::ComPtr<ID3D11Device> m_pDevice_ = nullptr;
+    ::HWND m_hWnd_ = nullptr;
+
+    std::vector<int> m_vec_;
 
     std::string m_str_;
 
@@ -302,7 +308,7 @@ private:
 
     inline static bool s_flag = true;
 
-    static int s_integer;                    // static variables' names start with an "s_"
+    static int s_integer;
 
     static constinit int s_int1;          
 
