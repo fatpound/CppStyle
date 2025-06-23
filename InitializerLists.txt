@@ -1,0 +1,80 @@
+/*-----------------------------*/
+/* CppStyle: Initializer Lists */
+/*-----------------------------*/
+
+// trailing commas
+https://clang.llvm.org/docs/ClangFormatStyleOptions.html#enumtrailingcomma
+
+enum class EC
+{
+    Val1,
+    Val2,
+    Val3   // I don't like adding ',' at the end of an initializer list (list initializers)
+};
+
+
+// designated initializer 1
+
+D3D11_RASTERIZER_DESC
+{
+    .FillMode              = D3D11_FILL_SOLID,
+    .CullMode              = D3D11_CULL_BACK,
+    .FrontCounterClockwise = false,
+    .DepthBias             = 0,
+    .DepthBiasClamp        = 0.0F,
+    .SlopeScaledDepthBias  = 0.0F,
+    .DepthClipEnable       = true,
+    .ScissorEnable         = false,
+    .MultisampleEnable     = true,
+    .AntialiasedLineEnable = true
+};
+
+
+// designated initializer 2
+
+DXGI_SWAP_CHAIN_DESC
+{
+    .BufferDesc   =
+                  DXGI_MODE_DESC // when needed
+                  {
+                      .Width            = GetWidth<UINT>(),
+                      .Height           = GetHeight<UINT>(),
+                      .RefreshRate      =
+                                        {
+                                            .Numerator   = 0U,
+                                            .Denominator = 0U,
+                                        },
+                      .Format           = DXGI_FORMAT_B8G8R8A8_UNORM,
+                      .ScanlineOrdering = DXGI_MODE_SCANLINE_ORDER_UNSPECIFIED,
+                      .Scaling          = DXGI_MODE_SCALING_UNSPECIFIED,
+                  },
+    .SampleDesc   =
+                  {
+                      .Count   = (Framework ? 1U : m_msaa_count_),
+                      .Quality = (Framework ? 0U : m_msaa_quality_ - 1U)
+                  },
+    .BufferUsage  = DXGI_USAGE_RENDER_TARGET_OUTPUT,
+    .BufferCount  = 1U,
+    .OutputWindow = GetHwnd(),
+    .Windowed     = not (IN_RELEASE and NotFramework),
+    .SwapEffect   = DXGI_SWAP_EFFECT_DISCARD,
+    .Flags        = 0U
+};
+
+
+// designated initializer 3
+//
+// even if there is only 1 member of a struct, I prefer to write in allman style, always
+
+
+// designated initializer 4, returning in another init-list
+
+return
+{
+    Vec2{ .x = -1.0F, .y =  1.0F },
+    Vec2{ .x =  1.0F, .y =  1.0F },
+    Vec2{ .x =  1.0F, .y = -1.0F },
+    Vec2{ .x = -1.0F, .y =  1.0F },
+    Vec2{ .x =  1.0F, .y = -1.0F },
+    Vec2{ .x = -1.0F, .y = -1.0F }
+};

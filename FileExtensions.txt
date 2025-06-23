@@ -1,0 +1,27 @@
+/*---------------------------*/
+/* CppStyle: File Extensions */
+/*---------------------------*/
+
+// fatpound* //
+
+
+// header (unit)           : .hpp   .hh   .hxx
+//  module  interface      : .cppm  .ccm  .cxxm  .c++m  .ixx  .mxx
+// (module) implementation : .cpp   .cc   .cxx   .c++         .mpp
+
+
+My preferences
+--------------
+module interface        : .ixx
+module implementation   : .cxx
+header                  : .hpp
+header unit             : .hxx
+impl. file              : .cpp
+impl. file (has import) : .c++
+
+
+Notes
+-----
+.cppm     (GCC, Clang)
+.ixx      (Microsoft)
+.mxx .mpp (CLion IDE)
