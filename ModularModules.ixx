@@ -61,7 +61,7 @@ module; // I add that to the top of module files
 
 export module FatPound;
 
-// I prefer adding a space between import "categories"
+// I prefer adding a space between import "categories" but its not needed, see #2
 // I prefer alphabetically ordered imports (extensions first except WinAPI wrappers)
 
 export import <Windows.h>;
