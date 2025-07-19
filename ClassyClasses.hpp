@@ -43,7 +43,7 @@ private:
 
 // and then.............
 // operators
-// static member functions     // function templates appear first in every category
+// static member functions     // function templates appear first in every category     // AND I think adding "S_" prefix to static member functions is fine. See: https://github.com/fatpound/CppStyle/issues/1
 // virtual member functions
 // member functions
 
